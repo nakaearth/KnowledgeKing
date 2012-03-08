@@ -1,0 +1,20 @@
+%h1 まめ知識一覧
+
+%table
+  %tr
+    %th タイトル
+    %th User
+    %th
+    %th
+    %th
+
+  - @knowledges.each do |knowledge|
+    %tr
+      %td= knowledge.title
+      %td= knowledge.user_id
+      %td= link_to '詳細', knowledge
+      %td= link_to '編集', edit_knowledge_path(knowledge)
+      %td= link_to '削除', knowledge, :confirm => 'Are you sure?', :method => :delete
+
+%br
+

@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @knowledge.title
+%p
+  %b Description:
+  = @knowledge.description
+%p
+  %b User:
+  = @knowledge.user_id
+
+= link_to 'Edit', edit_knowledge_path(@knowledge)
+\|
+= link_to 'Back', knowledges_path
