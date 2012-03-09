@@ -1,5 +1,7 @@
 KnowledgeKing::Application.routes.draw do
-  resources :knowledges
+  resources :knowledges, :only=>[:index,:show,:new,:edit,:create,:update,:destroy] do
+    get :my_knowledges, :on=>:member
+  end
   match '/auth/:provider/callback',to: 'sessions#create'
   match '/signout' =>'sessions#destroy' ,:as=>:signout
   match '/auth/failure'=>"session#failure"

@@ -2,12 +2,15 @@ class KnowledgesController < ApplicationController
   # GET /knowledges
   # GET /knowledges.json
   def index
-    @knowledges = Knowledge.all
-
+    @knowledges = Knowledge.latest.paginate(:page=>params[:page], :per_page=>5)
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @knowledges }
     end
+  end
+
+  def my_knowledges
+    @knowledges=Knowledge.where('user_id =>?',session[:user_id]).latest.paginate(:page=>params[:page],:per_page=>5)
   end
 
   # GET /knowledges/1
@@ -41,7 +44,7 @@ class KnowledgesController < ApplicationController
   # POST /knowledges.json
   def create
     @knowledge = Knowledge.new(params[:knowledge])
-    @knowledge.user_id=current_user.id
+    @knowledge.user_id=session[:user_id]
     respond_to do |format|
       if @knowledge.save
         format.html { redirect_to @knowledge, notice: 'Knowledge was successfully created.' }
@@ -57,7 +60,7 @@ class KnowledgesController < ApplicationController
   # PUT /knowledges/1.json
   def update
     @knowledge = Knowledge.find(params[:id])
-
+    @knowledge.user_id=session[:user_id]
     respond_to do |format|
       if @knowledge.update_attributes(params[:knowledge])
         format.html { redirect_to @knowledge, notice: 'Knowledge was successfully updated.' }

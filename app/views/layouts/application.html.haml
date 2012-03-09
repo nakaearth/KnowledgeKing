@@ -31,10 +31,8 @@
           %a.brand{:href => "#"}KnowledgeKing
           .container-fluid.nav-collapse
             %ul.nav
-              %li= link_to "Myクイズ",{:action=>'index',:controller=>'knowledges'} 
+              %li= link_to "クイズ一覧",{:action=>'index',:controller=>'knowledges'} 
               %li= link_to '新規クイズ作成', new_knowledge_path
-              %li= link_to "Link 2", "/path2"
-              %li= link_to "Link 3", "/path3"
 
     .container-fluid
 
@@ -43,10 +41,8 @@
           .well.sidebar-nav
             %ul.nav.nav-list
               %li.nav-header メニュー 
-              %li= link_to "Myクイズ",{:action=>'index',:controller=>'knowledges'}
+              %li= link_to "Myクイズ",{:action=>'my_knowledges',:controller=>'knowledges'}
  
-              %li= link_to "Link 2", "/path2"
-              %li= link_to "Link 3", "/path3"
             %ul.nav.pull-right
               -if current_user==nil
                 %li=link_to "Sign in","/auth/#{if Rails.env.production? then 'twitter' else 'developer' end}"
