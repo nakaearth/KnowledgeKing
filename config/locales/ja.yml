@@ -190,3 +190,5 @@ ja:
       knowledge:
         title: タイトル 
         description: 内容
+      answer:
+        answer: 答え

@@ -10,7 +10,7 @@ class KnowledgesController < ApplicationController
   end
 
   def my_knowledges
-    @knowledges=Knowledge.where('user_id =>?',session[:user_id]).latest.paginate(:page=>params[:page],:per_page=>5)
+    @knowledges=Knowledge.where('user_id =?',session[:user_id]).latest.paginate(:page=>params[:page],:per_page=>5)
   end
 
   # GET /knowledges/1

@@ -1,15 +1,13 @@
 %p#notice= notice
-
+%div.menu_text
+  =link_to '答える', {:action=>:new ,:controller=>'answer'}
+  &nbsp;&nbsp;|&nbsp;&nbsp;
+  -if @knowledge.user_id != session[:user_id]
+    = link_to 'クイズを編集する', edit_knowledge_path(@knowledge)
+    &nbsp;&nbsp;|&nbsp;&nbsp;
 %p
   %b Title:
   = @knowledge.title
 %p
   %b Description:
   = @knowledge.description
-%p
-  %b User:
-  = @knowledge.user_id
-
-= link_to 'Edit', edit_knowledge_path(@knowledge)
-\|
-= link_to 'Back', knowledges_path
