@@ -41,7 +41,7 @@
           .well.sidebar-nav
             %ul.nav.nav-list
               %li.nav-header メニュー 
-              %li= link_to "Myクイズ",{:action=>'my_knowledges',:controller=>'knowledges'}
+              %li= link_to "Myクイズ","/my_knowledgs_list"
  
             %ul.nav.pull-right
               -if current_user==nil
