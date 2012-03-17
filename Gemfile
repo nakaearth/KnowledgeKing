@@ -7,6 +7,7 @@ gem 'rails', '3.2.2'
 
 group :development, :test do
   gem 'sqlite3'
+  gem 'heroku'
 end
 
 # Gems used only for assets and not required
@@ -42,7 +43,6 @@ gem "haml-rails"
 gem "json"
 gem "will_paginate"
 gem "jpmobile", :require => "action_pack"
-gem "sprockets", "~> 2.0"
 gem "whenever"
 gem "rspec"
 gem "rspec-rails", :group => :development
