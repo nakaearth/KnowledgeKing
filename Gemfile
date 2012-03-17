@@ -52,6 +52,7 @@ gem 'acts-as-taggable-on', '~>2.2.0'
 
 group :production do
   gem 'pg'
+  gem 'eventmachine'
+  gem 'thin'
 end
 gem "twitter-bootstrap-rails"
-
