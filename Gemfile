@@ -47,12 +47,10 @@ gem "whenever"
 gem "rspec"
 gem "rspec-rails", :group => :development
 gem 'paperclip', :git => 'git://github.com/thoughtbot/paperclip.git'
-gem "aws-sdk"
-gem 'acts-as-taggable-on', '~>2.2.0'
 
 group :production do
-  gem 'pg'
   gem 'eventmachine'
   gem 'thin'
+  gem 'pg'
 end
 gem "twitter-bootstrap-rails"
