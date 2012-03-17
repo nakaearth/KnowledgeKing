@@ -39,8 +39,8 @@
       .row-fluid
         .span3
           .well.sidebar-nav
-            -if !current_user
-              %img '#{current_user.image_path}'
+            -if current_user !=nil
+              %img #{current_user.image_path}
               %br
               -current_user.name
             %ul.nav.nav-list
