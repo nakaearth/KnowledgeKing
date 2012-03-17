@@ -39,11 +39,13 @@
       .row-fluid
         .span3
           .well.sidebar-nav
+            -if !current_user
+              %img '#{current_user.image_path}'
+              %br
+              -current_user.name
             %ul.nav.nav-list
               %li.nav-header メニュー 
               %li= link_to "Myクイズ","/my_knowledgs_list"
- 
-            %ul.nav.pull-right
               -if current_user==nil
                 %li=link_to "Sign in","/auth/#{if Rails.env.production? then 'twitter' else 'developer' end}"
         .span9
