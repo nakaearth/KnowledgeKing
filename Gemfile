@@ -31,7 +31,7 @@ gem 'jquery-rails'
 # gem 'jbuilder'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+#gem 'unicorn'
 
 # Deploy with Capistrano
 # gem 'capistrano'
@@ -48,9 +48,9 @@ gem "rspec"
 gem "rspec-rails", :group => :development
 gem 'paperclip', :git => 'git://github.com/thoughtbot/paperclip.git'
 
-group :production do
-  gem 'eventmachine'
-  gem 'thin'
-  gem 'pg'
-end
+#group :production do
+#  gem 'eventmachine'
+#  gem 'thin'
+#  gem 'pg'
+#end
 gem "twitter-bootstrap-rails"
