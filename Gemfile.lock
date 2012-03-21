@@ -100,6 +100,7 @@ GEM
       omniauth (~> 1.0)
     omniauth-twitter (0.0.8)
       omniauth-oauth (~> 1.0)
+    pg (0.13.2)
     polyglot (0.3.3)
     rack (1.4.1)
     rack-cache (1.2)
@@ -184,6 +185,7 @@ DEPENDENCIES
   json
   omniauth-twitter
   paperclip!
+  pg
   rails (= 3.2.2)
   rspec
   rspec-rails
