@@ -2,7 +2,7 @@
 %div.menu_text
   =link_to '答える', {:action=>:new ,:controller=>'answer'}
   &nbsp;&nbsp;|&nbsp;&nbsp;
-  -if @knowledge.user_id != session[:user_id]
+  -if is_my_knowledge(@knowledge.user_id, session[:user_id])
     = link_to 'クイズを編集する', edit_knowledge_path(@knowledge)
     &nbsp;&nbsp;|&nbsp;&nbsp;
 %p
