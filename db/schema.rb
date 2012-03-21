@@ -31,11 +31,11 @@ ActiveRecord::Schema.define(:version => 20120310143134) do
   create_table "users", :force => true do |t|
     t.string   "provider",    :null => false
     t.string   "uid",         :null => false
-    t.string   "screen_name"
-    t.string   "name"
+    t.string   "screen_name", :null => false
+    t.string   "name",        :null => false
     t.string   "image_path"
     t.string   "token"
-    t.string   "secret"
+    t.string   "secet"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end

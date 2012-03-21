@@ -3,3 +3,30 @@ http://change-the-world.heroku.com/16
 http://www.opinionatedprogrammer.com/2011/11/twitter-bootstrap-on-rails/
 
 http://ppworks.hatenablog.jp/entry/2012/02/14/124612
+
+unicorn_rails -c config/unicorn.rb -E development -p 5000 -D
+
+○Ngnixのインストール
+・PCREを入れる
+>curl -OL ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.30.tar.gz
+>tar xvzf pcre-8.01.tar.gz
+>cd pcre-8.01
+>./configure --prefix=/usr/local
+>make
+>sudo make install
+
+
+・Ngnixを入れる
+curl -O http://nginx.org/download/nginx-1.1.9.tar.gz
+tar xvzf nginx-0.8.33.tar.gz
+cd nginx-0.8.33
+./configure --prefix=/usr/local --with-http_ssl_module
+make
+sudo make install
+
+http://www.kevinworthington.com/nginx-mac-os-snow-leopard-2-minutes/
+
+◯起動と停止h
+sudo nginx
+sudo nginx -s stop
+
