@@ -40,7 +40,7 @@
         .span3
           .well.sidebar-nav
             -unless current_user ==nil
-              %img #{current_user.image_path}
+              %img{:src=>"#{current_user.image_path}"}
               %br
               -current_user.name
             %ul.nav.nav-list
