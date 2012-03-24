@@ -41,8 +41,7 @@
           .well.sidebar-nav
             -unless current_user ==nil
               %img{:src=>"#{current_user.image_path}"}
-              %br
-              -current_user.name
+              -current_user.screen_name
             %ul.nav.nav-list
               %li.nav-header メニュー 
               -unless current_user ==nil
