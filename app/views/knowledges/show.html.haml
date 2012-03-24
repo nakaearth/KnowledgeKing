@@ -1,6 +1,6 @@
 %p#notice= notice
 %div.menu_text
-  =link_to '答える', {:action=>:new ,:controller=>'answer'}
+  =link_to '答える', new_knowledge_answer_path(@knowledge) 
   &nbsp;&nbsp;|&nbsp;&nbsp;
   -if is_my_knowledge(@knowledge.user_id, session[:user_id])
     = link_to 'クイズを編集する', edit_knowledge_path(@knowledge)
