@@ -1,6 +1,6 @@
 KnowledgeKing::Application.routes.draw do
   resources :knowledges, :only=>[:index,:show,:new,:edit,:create,:update,:destroy] do
-    resources :answer, :only=>[:new, :create]
+    resources :answer, :only=>[:show,:new, :create]
   end
   match 'my_knowledgs_list' =>'knowledges#my_knowledges'
   match '/auth/:provider/callback',to: 'sessions#create'
