@@ -10,7 +10,7 @@ class AnswerController < ApplicationController
   end
 
   def create
-    @answer=Answer.new(params[:knowledge])
+    @answer=Answer.new(params[:answer])
     @anwser.user_id=session[:user_id]
     respond_to do |format|
       if @answer.save
