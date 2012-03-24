@@ -11,15 +11,11 @@ class AnswerController < ApplicationController
 
   def create
     @answer=Answer.new(params[:answer])
-    @anwser.user_id=session[:user_id]
-    respond_to do |format|
-      if @answer.save
-        format.html {redirect_to @answer, notice: 'answer was success'}
-        format.json { render json: @answer, satus: :created, location: @answer} 
-      else
-        format.html {render action: "new" }
-        format.json {render json: @knowledge.errors, status: :unprocessable}
-      end
+    @answer.user_id=session[:user_id]
+    @answer.knowledge_id=params[:knowledge_id]
+    unless @answer.save
+      render action: "new" 
+      render json: @knowledge.errors, status: :unprocessable
     end
   end
 end
